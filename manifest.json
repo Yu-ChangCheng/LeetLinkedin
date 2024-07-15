@@ -1,20 +1,19 @@
 {
-    "manifest_version": 3,
-    "name": "LeetCode to LinkedIn",
-    "version": "1.0",
-    "description": "Automatically post LeetCode submissions to LinkedIn",
-    "permissions": ["activeTab", "storage", "identity"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://leetcode.com/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "LeetCode to LinkedIn",
+  "version": "1.0",
+  "description": "Automatically post LeetCode submissions to LinkedIn",
+  "permissions": ["activeTab", "storage", "identity", "https://leetcode.com/*", "https://api.linkedin.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"]
     }
+  ],
+  "action": {
+    "default_popup": "popup.html"
   }
-  
+}
